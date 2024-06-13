@@ -33,8 +33,7 @@ def cpfgerar():
 
 @app.route("/gerar-cnpj")
 def CNPJ(): 
-    CNPJ = cnpj.generate(True)
-    return "<h1>Gerador de cpf: </h1> <br> <div> O seu cnpj é:" + cnpj.generate(True)+ " </div>"
+    return  f"<h1>Gerar cpf </h1><p>CPF: {cnpj.generate(True)}"     #"<h1>Gerador de cpf: </h1> <br> <div> O seu cnpj é:" + cnpj.generate(True)+ " </div>"
 
 app.run()
 
