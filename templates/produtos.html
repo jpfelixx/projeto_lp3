@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+
+<ul>
+    <li>Eyes wide open</li>
+    <li>Evolution</li>
+    <li>Singular act I</li>
+    <li>Singular act II</li>
+    <li>💌Emails I can't send💌</li>
+
+    <ol>
+     <li>Decode</li>
+     <li>Opposite</li>
+     <li>Skinny dipping</li>
+     <li>Bet u wanna</li>
+     <li>Feather</li>
+     <li>Nonsense</li>
+     <li>Tornado warning</li>
+     <li>Emails i cant send</li>
+     <li>All because Liked a boy</li>
+     <li>Bad for business</li>
+     <li>Lonsome</li>
+     <li>Fast times</li>
+     <li>Already Over</li>
+     <li>Read your mind</li>
+     <li>Things I wish u said</li>
+     <li>How many things</li>
+
+     <p>Comming soon...</p>
+
+     <ol>
+     {%if newsongs %}
+         {% for song in newsongs %}
+         <li>{{song.nome|e }}</li>
+         <p>{{song.descricao|e }}</p>
+         {% endfor %}
+
+     {%endif %}
+     </ol>
+     
+
+      </ol>
+   </ul>
+
+    <figure>
+     <img src="{{ url_for('static', filename='photoshoot.jpeg') }}" / width="200px">
+    </figure>
+ </ul>
+
+
+{% endblock %}

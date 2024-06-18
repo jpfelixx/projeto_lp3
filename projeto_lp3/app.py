@@ -1,4 +1,5 @@
-from flask import Flask #é a classe do Flask do módulo flasK
+from flask import Flask , render_template
+#é a classe do Flask do módulo flasK
 #a1 = Aluno() --> não precisa de "new"
 from validate_docbr import CPF, CNPJ
 
@@ -14,17 +15,21 @@ cnpj = CNPJ()
 #página home
 @app.route("/")
 def home(): 
-    return"<h1> Home page</h1>"
+    return render_template("home.html")
 
 #página de contatos
 @app.route("/contato")
 def contatos():
-    return"<h1>Contato</h1>"
+    return render_template("contato.html")
 
 
-@app.route("/servicos")
-def servicos():
-    return"<h1>Nossos servicos</h1>"
+@app.route("/produtos")
+def prod():
+    lista_produtos =[
+        {"nome":"Espresso","descricao": "That's tha me espresso"},
+        {"nome":"Please Plaese Please","descricao": "Please ,Plaese ,Please stream Please Plaese Please"}
+    ]
+    return render_template("produtos.html", newsongs = lista_produtos)
 
 @app.route("/gerar-cpf")
 def cpfgerar(): 
@@ -33,7 +38,7 @@ def cpfgerar():
 
 @app.route("/gerar-cnpj")
 def CNPJ(): 
-    return  f"<h1>Gerar cpf </h1><p>CPF: {cnpj.generate(True)}"     #"<h1>Gerador de cpf: </h1> <br> <div> O seu cnpj é:" + cnpj.generate(True)+ " </div>"
+    return  f"<h1>Gerar cpf </h1><p>CPF: {cnpj.generate(True)}"    #"<h1>Gerador de cpf: </h1> <br> <div> O seu cnpj é:" + cnpj.generate(True)+ " </div>"
 
 app.run()
 
@@ -42,6 +47,5 @@ app.run()
 #rota + Função
 #rota:  Definição de um pacote url
 #função: Função python com retorno(string,int,outros)
-
 #gerar-cpf 
 #servicos
