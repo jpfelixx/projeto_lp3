@@ -26,19 +26,38 @@ def contatos():
 @app.route("/produtos")
 def prod():
     lista_produtos =[
-        {"nome":"Espresso","descricao": "That's that me espresso "},
-        {"nome":"Please Plaese Please","descricao": "Please, Plaese,Please stream Please Plaese Please"}
+        {"nome":"Espresso","descricao": "That's that me espresso "},   
     ]
     return render_template("produtos.html", newsongs = lista_produtos)
 
+#------------------------------------------
 @app.route("/gerar-cpf")
 def cpfgerar(): 
     cpfuser = cpf.generate(True)
-    return cpfuser
+    return render_template("cpf.html", cpf = cpfuser)
 
 @app.route("/gerar-cnpj")
-def CNPJ(): 
-    return  f"<h1>Gerar cpf </h1><p>CPF: {cnpj.generate(True)}"    #"<h1>Gerador de cpf: </h1> <br> <div> O seu cnpj é:" + cnpj.generate(True)+ " </div>"
+def CNPJ():
+     cnpjuser = cnpj.generate(True) 
+     return  render_template("cnpj.html", cnpj = cnpjuser)
+
+@app.route("/termos-de-uso")
+def termosdeuso(): 
+    return render_template("termosdeuso.html")
+
+@app.route("/como-utilizar")
+def comoutilizar(): 
+    return render_template("comoutilizar.html")
+
+@app.route("/politica-priv")
+def politicapriv(): 
+    return render_template("politicadepriv.html")
+
+@app.route("/home2")
+def home2(): 
+    return render_template("home2.html")
+
+
 
 app.run()
 
