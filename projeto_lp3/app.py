@@ -26,8 +26,8 @@ def contatos():
 @app.route("/produtos")
 def prod():
     lista_produtos =[
-        {"nome":"Espresso","descricao": "That's tha me espresso"},
-        {"nome":"Please Plaese Please","descricao": "Please ,Plaese ,Please stream Please Plaese Please"}
+        {"nome":"Espresso","descricao": "That's that me espresso "},
+        {"nome":"Please Plaese Please","descricao": "Please, Plaese,Please stream Please Plaese Please"}
     ]
     return render_template("produtos.html", newsongs = lista_produtos)
 

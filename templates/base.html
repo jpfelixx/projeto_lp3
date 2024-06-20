@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+
+    <div> Sabrina Carpenter</div>
     <nav>
         <a href="/">Home page</a>
         <a href="/contato">Contatos</a>
@@ -17,7 +20,7 @@
 
     {% endblock %}
 
-    <p>Adicione as suas informações no forms abaixo</p>
+  
 
     <footer>desenvolvido por jotinha</footer>
 </body>
