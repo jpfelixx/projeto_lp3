@@ -1,12 +1,70 @@
-img{
-    width: 200px;
-}
-body{
-    margin: 0px;
-    
-}
-*{
-    background-color:rgb(255, 190, 290);
-   
+:root {
+    --azul: #3FACEB;
+    --azul-arroxeado:#6465EB;
+    --azul-medio: #3F75EB;
+    --ciano: #3FE2EB;
+    --roxo: #773FEB;
+    --azul-claro: #8EABEB;
 }
 
+label, input, button{
+    display: block;
+    
+}
+button{
+    transition: 1s;
+}
+
+button:hover{
+    transform: rotate(360deg);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+html, body{
+    margin: 0px;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    color: var(--azul-medio);
+    background-color: var(--azul-claro);
+}
+a{
+    text-decoration: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+a:hover{
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(85, 156, 248);
+    padding: 20px;
+}
+
+.main{
+ 
+  width: 300px;
+    margin: 30px;
+    padding: 20px;
+    background-color: rgb(183, 209, 243);
+    border-radius: 20px;
+
+}
+
+.main > h1{
+    text-align: center;
+}
+.main > form > button{
+  
+    
+}

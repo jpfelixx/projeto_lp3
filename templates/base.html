@@ -6,23 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>{% block title %}{% endblock %}</title>
+
 </head>
 <body>
 
-    <div> Sabrina Carpenter</div>
-    <nav>
+    <nav class="container">
         <a href="/">Home page</a>
         <a href="/contato">Contatos</a>
         <a href="/produtos">Produtos</a>
         <a href="/gerar-cnpj">Cnpj</a>
         <a href="/gerar-cpf">Cpf</a>
+        <a href="/produtos/cadastro">Cadastro de Produtos</a>
     </nav>
     
     {% block content %}
 
     {% endblock %}
-
-  
 
     <footer>desenvolvido por jotinha</footer>
 </body>

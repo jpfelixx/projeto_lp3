@@ -1,4 +1,4 @@
-from flask import Flask , render_template
+from flask import Flask , render_template, request
 #é a classe do Flask do módulo flasK
 #a1 = Aluno() --> não precisa de "new"
 from validate_docbr import CPF, CNPJ
@@ -22,12 +22,12 @@ def termosdeuso():
 def contatoss():
     return render_template("contato.html")
 
-
-@app.route("/produtos")
-def prod():
-    lista_produtos =[
+lista_produtos =[
         {"nome":"Espresso","descricao": "That's that me espresso "},   
     ]
+@app.route("/produtos")
+def prod():
+ 
     return render_template("produtos.html", newsongs = lista_produtos)
 
 
@@ -45,7 +45,6 @@ def cpfgerar():
 def CNPJ():
      cnpjuser = cnpj.generate(True) 
      return  render_template("cnpj.html", cnpj = cnpjuser)
-
 @app.route("/como-utilizar")
 def comoutilizar(): 
     return render_template("comoutilizar.html")
@@ -60,7 +59,20 @@ def contatos():
 
 @app.route("/produto")
 def produtos(): 
-    return render_template("produtos2.html")
+    return render_template("produtos.html")
+
+@app.route("/produtos/cadastro")
+def cadastro_produto():
+    return render_template("cadastro_produto.html")
+
+@app.route("/produtos", methods = ['POST'])
+def salvar_produto():
+    nome = request.form['nome']
+    descricao = request.form['descricao']
+    produto = {"nome": nome, "descricao": descricao}
+    lista_produtos.append(produto)
+    return render_template ("produtos.html", newsongs = lista_produtos)
+
 
 app.run()
 
@@ -71,3 +83,6 @@ app.run()
 #função: Função python com retorno(string,int,outros)
 #gerar-cpf 
 #servicos
+
+
+#https://color.adobe.com/pt/create/color-wheel
