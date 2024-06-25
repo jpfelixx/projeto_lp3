@@ -8,13 +8,22 @@
 </head>
 <body>
     
+
+
     <nav>
-        <a href="/termos-de-uso">Termos de Uso</a>
-        <a href="/politica-priv">Politica de Privacidade</a>
+        <a href="/home">Home page</a>
+        <a href="/contatos">Contatos</a>
+        <a href="/produto">Produtos</a>
+        <a href="/gerar-cnpj">Cnpj</a>
+        <a href="/gerar-cpf">Cpf</a>
+    </nav>
+
+    {% block content %} {% endblock %}
+    <nav>
+        <a href="/">Termos de Uso</a>
+        <a href="/politica-privacidade">Politica de Privacidade</a>
         <a href="/como-utilizar">Como Utilizar</a>
     </nav>
-    {% block content %} {% endblock %}
-
   
 
 </body>

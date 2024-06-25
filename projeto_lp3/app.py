@@ -14,12 +14,12 @@ cnpj = CNPJ()
 
 #página home
 @app.route("/")
-def home(): 
-    return render_template("home.html")
+def termosdeuso(): 
+    return render_template("termosdeuso.html")
 
 #página de contatos
-@app.route("/contato")
-def contatos():
+@app.route("/contatoss")
+def contatoss():
     return render_template("contato.html")
 
 
@@ -29,6 +29,11 @@ def prod():
         {"nome":"Espresso","descricao": "That's that me espresso "},   
     ]
     return render_template("produtos.html", newsongs = lista_produtos)
+
+
+@app.route("/home")
+def home2(): 
+    return render_template("home2.html")
 
 #------------------------------------------
 @app.route("/gerar-cpf")
@@ -41,23 +46,21 @@ def CNPJ():
      cnpjuser = cnpj.generate(True) 
      return  render_template("cnpj.html", cnpj = cnpjuser)
 
-@app.route("/termos-de-uso")
-def termosdeuso(): 
-    return render_template("termosdeuso.html")
-
 @app.route("/como-utilizar")
 def comoutilizar(): 
     return render_template("comoutilizar.html")
 
-@app.route("/politica-priv")
+@app.route("/politica-privacidade")
 def politicapriv(): 
     return render_template("politicadepriv.html")
 
-@app.route("/home2")
-def home2(): 
-    return render_template("home2.html")
+@app.route("/contatos")
+def contatos(): 
+    return render_template("contatos2.html")
 
-
+@app.route("/produto")
+def produtos(): 
+    return render_template("produtos2.html")
 
 app.run()
 
