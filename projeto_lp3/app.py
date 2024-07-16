@@ -72,8 +72,6 @@ def salvar_produto():
     produto = {"nome": nome, "descricao": descricao}
     lista_produtos.append(produto)
     return render_template ("produtos.html", newsongs = lista_produtos)
-
-
 app.run()
 
 #tais funções devem ser executadas quando foram requisitadas pelo servidor

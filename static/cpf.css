@@ -1,0 +1,53 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    width: 10vh;
+    text-align: center;
+    border-radius: 20px;
+
+
+}
+
+a:hover{
+    transition: transform 5s ease-in;
+    transform: rotate(360deg);
+   
+}
+nav{
+    background-color:rgb(228, 90, 127);
+    display: flex;
+    justify-content: space-around;
+    height: 10vh;
+    width: 100%;
+    align-items: center;
+}
+
+.cont{
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   background-color: rgb(228, 156, 180);
+  flex-grow: 1;
+   justify-content: center;
+   align-items: center;
+
+   
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(228, 90, 127);
+    height: 10vh;
+}
+    
