@@ -46,3 +46,39 @@ with open("projeto_lp3/dados.txt",'a') as file4:
    file4.write("\n Taylor Swift")
  
 #arquivo que tem valores separados por vírgulas
+
+
+'''
+with open("projeto_lp3/arquivo.csv", "r") as arquivos_produtos:
+   produtos = []
+   for l in arquivos_produtos:
+      produtos.append(l.strip().split(","))
+   print(produtos)
+
+'''
+def obter_produtos():
+    with open("projeto_lp3/arquivo.csv", "r") as arquivos_produtos:
+        produtos = []
+        for l in arquivos_produtos:
+            dados =  l.strip().split(",")
+            p = {
+                "nome": dados[0],
+                "descricapo": dados[1],
+                "preco": dados[2],
+                "imagem": dados[3]
+            }
+            
+            produtos.append(p)
+        return produtos
+    
+print(obter_produtos())
+
+
+def salvar_produtos(nome, descricao, preco, imagem):
+    with open("projeto_lp3/arquivo.csv", "a") as date:
+        texto_produto = f"\n{nome},{descricao},{preco},{imagem}"
+        date.write(texto_produto)
+
+salvar_produtos("Salto","15cm Loubotin","2k", "loubotin.jpg")
+salvar_produtos("Esmalte","15cm Loubotin","2k", "loubotin.jpg")
+salvar_produtos("Bolsas","verde","7k", "birkin.jpg")
