@@ -12,54 +12,52 @@ cnpj = CNPJ()
 
 # @app.route # toda vez que tiver essa rota,  vá para home
 
-#página home
-@app.route("/")
-def termosdeuso(): 
-    return render_template("termosdeuso.html")
 
-#página de contatos
-@app.route("/contatoss")
-def contatoss():
-    return render_template("contato.html")
 
 lista_produtos =[
         {"nome":"Espresso","descricao": "That's that me espresso "},   
     ]
-@app.route("/produtos")
-def prod():
- 
-    return render_template("produtos.html", newsongs = lista_produtos)
-
-
-@app.route("/home")
-def home2(): 
-    return render_template("home2.html")
 
 #------------------------------------------
+
+@app.route("/")
+def home(): 
+    return render_template("home.html")
+
+
+@app.route("/contatos")
+def contatos(): 
+    return render_template("contatos.html")
+
+@app.route("/produtos")
+def produtos():
+ return render_template("produtos.html", newsongs = lista_produtos)
+
+#------------------------------------------
+
 @app.route("/gerar-cpf")
 def cpfgerar(): 
     cpfuser = cpf.generate(True)
     return render_template("cpf.html", cpf = cpfuser)
 
+
 @app.route("/gerar-cnpj")
 def CNPJ():
      cnpjuser = cnpj.generate(True) 
      return  render_template("cnpj.html", cnpj = cnpjuser)
-@app.route("/como-utilizar")
-def comoutilizar(): 
-    return render_template("comoutilizar.html")
+
+#------------------------------------------
+@app.route("/termos-de-uso")
+def termosdeuso(): 
+    return render_template("termosdeuso.html")
 
 @app.route("/politica-privacidade")
 def politicapriv(): 
     return render_template("politicadepriv.html")
 
-@app.route("/contatos")
-def contatos(): 
-    return render_template("contatos2.html")
-
-@app.route("/produto")
-def produtos(): 
-    return render_template("produtos.html")
+@app.route("/como-utilizar")
+def comoutilizar(): 
+    return render_template("comoutilizar.html")
 
 @app.route("/produtos/cadastro")
 def cadastro_produto():

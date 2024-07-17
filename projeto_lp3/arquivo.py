@@ -5,7 +5,7 @@
 #Caso queira mostrar mais de uma vez, armazenar em uma variável
 
 #Multhreading -> não uma pessoa só executando o proejto, o site
-arquivo = open("projeto_lp3/dados.txt") #caminho do arquivo
+arquivo = open("projeto_lp3/informacoes.txt") #caminho do arquivo
 
 print(arquivo.read())
 print(arquivo.read())
@@ -25,15 +25,15 @@ arquivo.close() #Para o site não caor
 
 
 #open("projeto_lp3/dados.txt") as file: Espécie de atribuição inversa
-with open("projeto_lp3/dados.txt") as file:
+with open("projeto_lp3/informacoes.txt") as file:
     print(file.read())
 
-with open("projeto_lp3/dados.txt") as file2:
+with open("projeto_lp3/informacoes.txt") as file2:
    lines = file2.readlines()  #readLine -Devolve uma lista de Strings
    print(lines)
 
 #use um for
-with open("projeto_lp3/dados.txt",'r') as file3:
+with open("projeto_lp3/informacoes.txt",'r') as file3:
    linhas = []
    for x in file3:
       linhas.append(x.strip()) #strip()tira o espaço antes e depois
@@ -41,7 +41,7 @@ with open("projeto_lp3/dados.txt",'r') as file3:
 
 #Tipo de leitura mode='r'(read)/mode='w'(write) / a= append -> é tipo um write só quie substitui tdo.
 
-with open("projeto_lp3/dados.txt",'a') as file4:
+with open("projeto_lp3/informacoes.txt",'a') as file4:
    #file4.write("Taylor Swift")
    file4.write("\n Taylor Swift")
  
@@ -57,7 +57,7 @@ with open("projeto_lp3/arquivo.csv", "r") as arquivos_produtos:
 
 '''
 def obter_produtos():
-    with open("projeto_lp3/arquivo.csv", "r") as arquivos_produtos:
+    with open("projeto_lp3/info.csv", "r") as arquivos_produtos:
         produtos = []
         for l in arquivos_produtos:
             dados =  l.strip().split(",")
@@ -75,7 +75,7 @@ print(obter_produtos())
 
 
 def salvar_produtos(nome, descricao, preco, imagem):
-    with open("projeto_lp3/arquivo.csv", "a") as date:
+    with open("projeto_lp3/info.csv", "a") as date:
         texto_produto = f"\n{nome},{descricao},{preco},{imagem}"
         date.write(texto_produto)
 

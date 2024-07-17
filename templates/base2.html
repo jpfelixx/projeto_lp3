@@ -1,30 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='sclogo.png') }}" type="image/x-icon">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    
-
-
-    <nav>
-        <a href="/home">Home page</a>
+    <nav class="navegation">
+        <a href="/">Home page</a>
         <a href="/contatos">Contatos</a>
-        <a href="/produto">Produtos</a>
+        <a href="/produtos">Produtos</a>
         <a href="/gerar-cnpj">Cnpj</a>
         <a href="/gerar-cpf">Cpf</a>
     </nav>
 
-    {% block content %} {% endblock %}
-    <nav>
-        <a href="/">Termos de Uso</a>
-        <a href="/politica-privacidade">Politica de Privacidade</a>
-        <a href="/como-utilizar">Como Utilizar</a>
-    </nav>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
   
+    <div class="container">
+        <h2>Mais funcionalidades:</h2>
+        <nav class="funcionalidades">
+            <a href="/termos-de-uso">Termos de Uso</a>
+            <a href="/politica-privacidade">Politica de Privacidade</a>
+            <a href="/como-utilizar">Como Utilizar</a>
+            <a href="/produtos/cadastro">Cadastro de Produtos</a>
+        </nav>
+    </div>
 
+    <footer>
+        <p>Desenvolvido por: João Pedro</p>
+        <p>Disciplina: LP3-2024</p>
+        <p>Professor: Latorre</p>
+    </footer>
 </body>
 </html>

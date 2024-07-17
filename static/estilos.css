@@ -1,0 +1,106 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    background-color: powderblue;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container {
+    background-color: rgb(39, 197, 218);
+    padding: 2%;
+    width: 40vh;
+    margin: 5vh;
+    border-radius: 30px;
+}
+
+.funcionalidades {
+    display: flex;
+    flex-direction: column;
+    background-color: powderblue;
+    border-radius: 10px;
+}
+
+.funcionalidades a {
+    margin: 1.5%;
+    margin-left: 5vh;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main > h1{
+
+    text-align: center;
+   
+    
+}
+.navegation {
+    height: 10vh;
+    align-items: center;
+}
+
+.navegation > a{
+    background-color: white;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+footer {
+    background-color: aqua;
+    text-align: center;
+}
+
+.format-home{
+   
+    width: 60vh;
+    text-align: justify;
+    text-indent: 3px;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.contatos{
+
+    background-color: white;
+    border-radius: 20px;
+    padding: 3vh;
+}
+div> div > h2{
+    text-align: center;
+}
+.cadastro{
+    background-color: rgb(212, 178, 178);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 5vh;
+    padding: 2vh;
+    box-shadow: 3px 4px 10px rgb(146, 125, 125);
+}
+form{
+    display: flex;
+    flex-direction: column;
+}

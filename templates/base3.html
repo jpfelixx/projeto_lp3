@@ -1,37 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylessex.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cpf.css') }}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
-
     <nav class="container">
-        <a href="/home">Home</a>
-        <a href="/contatos">Contato</a>
-        <a href="/produto">Produtos</a>
-        
+        <a href="/">HOME</a>
+        <a href="/gerar-cpf">CPF</a>
+        <a href="/gerar-cnpj">CNPJ</a>
     </nav>
 
-    <main class="everything">
-        {% block content %} {% endblock %}
-    </main>
+    <div class="cont">
+        {% block content %}
 
 
-    <footer>
-        <nav class="container">
-            <a href="/">Termos de Uso</a>
-            <a href="/politica-privacidade">Politica de Privacidade</a>
-            <a href="/como-utilizar">Como Utilizar</a>
-            <a href="/produtos/cadastro">Cadastro de Produtos</a>
-        </nav>
-    </footer>
-    
+        {% endblock %}
+    </div>
+    <footer>Desenvolvido por João</footer>
 </body>
 
 </html>
